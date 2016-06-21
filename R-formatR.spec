@@ -4,13 +4,17 @@
 #
 Name     : R-formatR
 Version  : 1.4
-Release  : 19
+Release  : 20
 URL      : http://cran.r-project.org/src/contrib/formatR_1.4.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/formatR_1.4.tar.gz
 Summary  : Format R Code Automatically
 Group    : Development/Tools
 License  : MIT
+Requires: R-testit
+Requires: R-stringr
 BuildRequires : R-knitr
+BuildRequires : R-stringr
+BuildRequires : R-testit
 BuildRequires : clr-R-helpers
 
 %description
@@ -36,6 +40,7 @@ mkdir -p %{buildroot}/usr/lib64/R/library
 R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library formatR
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost
