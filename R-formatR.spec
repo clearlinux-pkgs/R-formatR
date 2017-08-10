@@ -4,7 +4,7 @@
 #
 Name     : R-formatR
 Version  : 1.5
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/formatR_1.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/formatR_1.5.tar.gz
 Summary  : Format R Code Automatically
@@ -14,8 +14,10 @@ BuildRequires : R-knitr
 BuildRequires : clr-R-helpers
 
 %description
-# formatR
-[![Build Status](https://travis-ci.org/yihui/formatR.svg)](https://travis-ci.org/yihui/formatR)
+and indent will be added to the code automatically, and comments will be
+    preserved under certain conditions, so that R code will be more
+    human-readable and tidy. There is also a Shiny app as a user interface in
+    this package (see tidy_app()).
 
 %prep
 %setup -q -c -n formatR
@@ -25,11 +27,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1496606358
+export SOURCE_DATE_EPOCH=1502399889
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1496606358
+export SOURCE_DATE_EPOCH=1502399889
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
