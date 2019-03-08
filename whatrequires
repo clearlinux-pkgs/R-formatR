@@ -1,0 +1,8 @@
+# This file contains recursive sources that require this package
+R-DRR
+R-R6
+R-effects
+R-ggplot2
+R-knitr
+R-lambda.r
+R-qqman
