@@ -4,13 +4,15 @@
 #
 Name     : R-formatR
 Version  : 1.6
-Release  : 53
+Release  : 54
 URL      : https://cran.r-project.org/src/contrib/formatR_1.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/formatR_1.6.tar.gz
 Summary  : Format R Code Automatically
 Group    : Development/Tools
 License  : MIT
+Requires: R-markdown
 BuildRequires : R-knitr
+BuildRequires : R-markdown
 BuildRequires : buildreq-R
 
 %description
@@ -27,10 +29,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552070077
+export SOURCE_DATE_EPOCH=1552770866
 
 %install
-export SOURCE_DATE_EPOCH=1552070077
+export SOURCE_DATE_EPOCH=1552770866
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -66,8 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library formatR|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  formatR || :
 
 
 %files
@@ -103,3 +104,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/formatR/shiny/server.R
 /usr/lib64/R/library/formatR/shiny/ui.R
 /usr/lib64/R/library/formatR/shiny/www/shiny-handler.js
+/usr/lib64/R/library/formatR/tests/test-all.R
+/usr/lib64/R/library/formatR/tests/testit/test-tidy.R
+/usr/lib64/R/library/formatR/tests/testit/test-usage.R
+/usr/lib64/R/library/formatR/tests/testit/test-utils.R
