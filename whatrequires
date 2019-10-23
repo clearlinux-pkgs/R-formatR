@@ -1,7 +1,4 @@
 # This file contains recursive sources that require this package
-R-R6
 R-effects
 R-futile.logger
-R-ggplot2
-R-knitr
 R-lambda.r
