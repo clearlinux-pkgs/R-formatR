@@ -4,7 +4,7 @@
 #
 Name     : R-formatR
 Version  : 1.7
-Release  : 66
+Release  : 67
 URL      : https://cran.r-project.org/src/contrib/formatR_1.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/formatR_1.7.tar.gz
 Summary  : Format R Code Automatically
@@ -12,31 +12,31 @@ Group    : Development/Tools
 License  : MIT
 BuildRequires : R-knitr
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-This app uses a `textarea` input to store R code, which is reformatted by
-`formatR::tidy_source()`. The result is written back in the text box. Click the
-`demo` button to load a demo, or paste your own R code here to see what this app
-can do.
+and indent will be added to the code automatically, and comments will be
+    preserved under certain conditions, so that R code will be more
+    human-readable and tidy. There is also a Shiny app as a user interface in
+    this package (see tidy_app()).
 
 %prep
 %setup -q -c -n formatR
+cd %{_builddir}/formatR
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571832963
+export SOURCE_DATE_EPOCH=1589586364
 
 %install
-export SOURCE_DATE_EPOCH=1571832963
+export SOURCE_DATE_EPOCH=1589586364
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
