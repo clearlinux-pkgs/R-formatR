@@ -4,7 +4,7 @@
 #
 Name     : R-formatR
 Version  : 1.12
-Release  : 86
+Release  : 87
 URL      : https://cran.r-project.org/src/contrib/formatR_1.12.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/formatR_1.12.tar.gz
 Summary  : Format R Code Automatically
