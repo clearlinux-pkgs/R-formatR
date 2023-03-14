@@ -4,7 +4,7 @@
 #
 Name     : R-formatR
 Version  : 1.14
-Release  : 92
+Release  : 93
 URL      : https://cran.r-project.org/src/contrib/formatR_1.14.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/formatR_1.14.tar.gz
 Summary  : Format R Code Automatically
@@ -12,9 +12,6 @@ Group    : Development/Tools
 License  : MIT
 BuildRequires : R-knitr
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 and indent will be added to the code automatically, and comments will be
@@ -31,10 +28,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1674058485
+export SOURCE_DATE_EPOCH=1678820136
 
 %install
-export SOURCE_DATE_EPOCH=1674058485
+export SOURCE_DATE_EPOCH=1678820136
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
